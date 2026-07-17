@@ -26,7 +26,7 @@ public final class HealNoteV2 extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
-        saveDefaultConfig();
+        
 
         getLogger().info("════════════════════════════════════════");
         getLogger().info("HealNote V2 - Démarrage...");
