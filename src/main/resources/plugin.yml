@@ -1,0 +1,33 @@
+name: HealNoteV2
+version: 2.0.0
+main: fr.merrylax.healnote.HealNoteV2
+api-version: '1.21'
+author: Merrylax
+description: Death Note & Heal Note Plugin with Destiny Guardian
+
+commands:
+  healnote:
+    description: Commande principale
+    aliases:
+      - hn
+    usage: /healnote
+  deathban:
+    description: Condamner un joueur avec Death Note
+    usage: /deathban <joueur>
+  deban:
+    description: Débannir avec Deban Book
+    usage: /deban <joueur>
+
+permissions:
+  healnote.admin:
+    description: Admin complet
+    default: op
+  healnote.use:
+    description: Utiliser Death Note & Heal Note
+    default: true
+  healnote.immune:
+    description: Immunisé contre Death Note
+    default: false
+  healnote.deban:
+    description: Utiliser Deban Book
+    default: false
