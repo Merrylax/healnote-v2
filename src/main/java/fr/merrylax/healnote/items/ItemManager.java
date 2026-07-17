@@ -15,7 +15,7 @@ public class ItemManager {
         this.plugin = plugin;
     }
 
-    public ItemStack createMauditeePage() {
+    public ItemStack createMauditePage() {
         ItemStack item = new ItemStack(Material.PAPER);
         ItemMeta meta = item.getItemMeta();
         if (meta != null) {
