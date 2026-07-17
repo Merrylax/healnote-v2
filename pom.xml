@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
 
     <name>HealNote V2</name>
-    <description>Death Note & Heal Note Plugin with Destiny Guardian</description>
+    <description>Death Note and Heal Note Plugin with Destiny Guardian</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
