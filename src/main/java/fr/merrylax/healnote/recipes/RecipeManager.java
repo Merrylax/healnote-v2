@@ -46,7 +46,7 @@ public class RecipeManager {
 
     recipe.setIngredient('T', Material.TOTEM_OF_UNDYING);
     recipe.setIngredient('N', Material.PAPER);
-    recipe.setIngredient('B', Material.WRITTEN_BOOK); 
+    recipe.setIngredient('B', Material.WRITABLE_BOOK);
         plugin.getServer().addRecipe(recipe);
     }
 
@@ -61,7 +61,7 @@ public class RecipeManager {
 
     recipe.setIngredient('N', Material.PAPER);
     recipe.setIngredient('T', Material.TOTEM_OF_UNDYING);
-    recipe.setIngredient('B', Material.BOOK);
+    recipe.setIngredient('B', Material.WRITABLE_BOOK);
         plugin.getServer().addRecipe(recipe);
     }
 
@@ -76,7 +76,7 @@ public class RecipeManager {
 
     recipe.setIngredient('N', Material.NETHER_STAR);
     recipe.setIngredient('S', Material.REINFORCED_DEEPSLATE);
-    recipe.setIngredient('B', Material.BOOK);
+    recipe.setIngredient('B', Material.WRITABLE_BOOK);
         plugin.getServer().addRecipe(recipe);
     }
 }
