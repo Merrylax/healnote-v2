@@ -30,7 +30,7 @@ public class ItemManager {
     }
 
     public ItemStack createDeathNote() {
-        ItemStack item = new ItemStack(Material.BOOK);
+        ItemStack item = new ItemStack(Material.WRITABLE_BOOK);
         ItemMeta meta = item.getItemMeta();
         if (meta != null) {
             meta.setDisplayName("§c☠️ Death Note");
@@ -53,6 +53,7 @@ public class ItemManager {
 
     public ItemStack createHealNote() {
         ItemStack item = new ItemStack(Material.BOOK);
+        ItemStack item = new ItemStack(Material.WRITABLE_BOOK);
         ItemMeta meta = item.getItemMeta();
         if (meta != null) {
             meta.setDisplayName("§a💚 Heal Note");
@@ -72,7 +73,7 @@ public class ItemManager {
     }
 
     public ItemStack createDebanBook() {
-        ItemStack item = new ItemStack(Material.WRITTEN_BOOK);
+        ItemStack item = new ItemStack(Material.WRITABLE_BOOK);
         ItemMeta meta = item.getItemMeta();
         if (meta != null) {
             meta.setDisplayName("§6📖 Deban Book");
