@@ -52,7 +52,7 @@ public class ItemManager {
     }
 
     public ItemStack createHealNote() {
-        ItemStack item = new ItemStack(Material.BOOK);
+        
         ItemStack item = new ItemStack(Material.WRITABLE_BOOK);
         ItemMeta meta = item.getItemMeta();
         if (meta != null) {
