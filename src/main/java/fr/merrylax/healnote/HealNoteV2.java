@@ -18,19 +18,17 @@ public final class HealNoteV2 extends JavaPlugin {
     private BanManager banManager;
     private GuardianManager guardianManager;
     
-    private DeathNoteListener deathNoteListener;
-    private HealNoteListener healNoteListener;
-    private DebanBookListener debanBookListener;
+    private BookListener bookListener;
     private GuardianListener guardianListener;
 
     @Override
     public void onEnable() {
         instance = this;
-        
+        saveDefaultConfig();
 
-        getLogger().info("════════════════════════════════════════");
+        getLogger().info("═══════════════════════════════════════════════════════════════");
         getLogger().info("HealNote V2 - Démarrage...");
-        getLogger().info("════════════════════════════════════════");
+        getLogger().info("═══════════════════════════════════════════════════════════════");
 
         // Initialiser les managers
         itemManager = new ItemManager(this);
@@ -47,27 +45,23 @@ public final class HealNoteV2 extends JavaPlugin {
         guardianManager.startTask();
 
         // Enregistrer les listeners
-        deathNoteListener = new DeathNoteListener(this);
-        healNoteListener = new HealNoteListener(this);
-        debanBookListener = new DebanBookListener(this);
+        bookListener = new BookListener(this);
         guardianListener = new GuardianListener(this);
         
-        getServer().getPluginManager().registerEvents(deathNoteListener, this);
-        getServer().getPluginManager().registerEvents(healNoteListener, this);
-        getServer().getPluginManager().registerEvents(debanBookListener, this);
+        getServer().getPluginManager().registerEvents(bookListener, this);
         getServer().getPluginManager().registerEvents(guardianListener, this);
 
-        getLogger().info("════════════════════════════════════════");
+        getLogger().info("═══════════════════════════════════════════════════════════════");
         getLogger().info("✅ HealNote V2 v" + getDescription().getVersion() + " activé!");
         getLogger().info("Développeur: Merrylax");
-        getLogger().info("════════════════════════════════════════");
+        getLogger().info("═══════════════════════════════════════════════════════════════");
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("════════════════════════════════════════");
+        getLogger().info("═══════════════════════════════════════════════════════════════");
         getLogger().info("❌ HealNote V2 désactivé.");
-        getLogger().info("════════════════════════════════════════");
+        getLogger().info("═══════════════════════════════════════════════════════════════");
     }
 
     public static HealNoteV2 getInstance() {

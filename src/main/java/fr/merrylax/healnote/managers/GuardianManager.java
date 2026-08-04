@@ -24,31 +24,27 @@ public class GuardianManager {
         Bukkit.getScheduler().runTaskTimer(plugin, this::updateChallenges, 0L, 20L);
     }
 
-    public void spawnGuardian(Location location, String targetName, UUID challengeId) {
+    public void spawnGuardian(Location location, String targetName, UUID challengeId, int duration) {
         Warden guardian = (Warden) location.getWorld().spawnEntity(location, EntityType.WARDEN);
         
         // Configuration du Gardien
         guardian.setCustomName("§6👹 Gardien du Destin");
         guardian.setCustomNameVisible(true);
         
-        // 6× les PV d'un Warden (384 au lieu de 64)
+        // Stats personnalisées
         guardian.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(384);
         guardian.setHealth(384);
-        
-        // 4× les dégâts (32 au lieu de 8)
         guardian.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(32);
-        
-        // Plus rapide
         guardian.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(0.4);
         
         guardians.put(challengeId, guardian);
-        activeChallenges.put(challengeId, 45 * 60); // 45 minutes en secondes
+        activeChallenges.put(challengeId, duration);
 
-        Bukkit.broadcastMessage("§6§l════════════════════════════════════════");
+        Bukkit.broadcastMessage("§6§l═══════════════════════════════════════");
         Bukkit.broadcastMessage("§6§l👹 LE GARDIEN DU DESTIN EST INVOQUÉ ! 👹");
-        Bukkit.broadcastMessage("§6§lDéfi de 45 MINUTES pour débannir " + targetName);
+        Bukkit.broadcastMessage("§6§lDéfi de " + duration + " SECONDES pour débannir " + targetName);
         Bukkit.broadcastMessage("§6§lVaincre le Gardien = Salut du joueur");
-        Bukkit.broadcastMessage("§6§l════════════════════════════════════════");
+        Bukkit.broadcastMessage("§6§l═══════════════════════════════════════");
     }
 
     private void updateChallenges() {
@@ -74,10 +70,10 @@ public class GuardianManager {
             guardian.remove();
         }
 
-        Bukkit.broadcastMessage("§a§l════════════════════════════════════════");
+        Bukkit.broadcastMessage("§a§l═══════════════════════════════════════");
         Bukkit.broadcastMessage("§a§l✦ LE GARDIEN A ÉTÉ VAINCU ! ✦");
         Bukkit.broadcastMessage("§a§l" + targetName + " EST DÉBANNI !");
-        Bukkit.broadcastMessage("§a§l════════════════════════════════════════");
+        Bukkit.broadcastMessage("§a§l═══════════════════════════════════════");
     }
 
     private void failChallenge(UUID id) {
@@ -86,10 +82,10 @@ public class GuardianManager {
             guardian.remove();
         }
 
-        Bukkit.broadcastMessage("§c§l════════════════════════════════════════");
+        Bukkit.broadcastMessage("§c§l═══════════════════════════════════════");
         Bukkit.broadcastMessage("§c§l❌ LE GARDIEN N'A PAS ÉTÉ VAINCU !");
         Bukkit.broadcastMessage("§c§lLe joueur reste banni à jamais.");
-        Bukkit.broadcastMessage("§c§l════════════════════════════════════════");
+        Bukkit.broadcastMessage("§c§l═══════════════════════════════════════");
     }
 
     public boolean hasActiveChallenge(UUID id) {
