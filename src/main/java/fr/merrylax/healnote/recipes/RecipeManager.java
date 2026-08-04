@@ -22,16 +22,15 @@ public class RecipeManager {
 
     private void registerMauditePageRecipe() {
         NamespacedKey key = new NamespacedKey(plugin, "maudite_page");
-        ShapedRecipe recipe = new ShapedRecipe(key, plugin.getItemManager().createMauditePage());
+        ShapedRecipe recipe = new ShapedRecipe(key, plugin.getItemManager().createMauditePages());
         recipe.shape(
             "NSN",
             "SPS",
             "NSN"
-    );
-
-    recipe.setIngredient('N', Material.NETHER_STAR);
-    recipe.setIngredient('S', Material.REINFORCED_DEEPSLATE);
-    recipe.setIngredient('P', Material.PAPER); 
+        );
+        recipe.setIngredient('N', Material.NETHER_STAR);
+        recipe.setIngredient('S', Material.PIGLIN_HEAD);
+        recipe.setIngredient('P', Material.PAPER);
         plugin.getServer().addRecipe(recipe);
     }
 
@@ -39,44 +38,41 @@ public class RecipeManager {
         NamespacedKey key = new NamespacedKey(plugin, "death_note");
         ShapedRecipe recipe = new ShapedRecipe(key, plugin.getItemManager().createDeathNote());
         recipe.shape(
-            "TNT",
-            "NBN",
-            "TNT"
-    );
-
-    recipe.setIngredient('T', Material.TOTEM_OF_UNDYING);
-    recipe.setIngredient('N', Material.PAPER);
-    recipe.setIngredient('B', Material.WRITABLE_BOOK);
+            "TMT",
+            "MBM",
+            "TMT"
+        );
+        recipe.setIngredient('T', Material.TOTEM_OF_UNDYING);
+        recipe.setIngredient('M', Material.PAPER); // Sera remplacé par Page Maudite
+        recipe.setIngredient('B', Material.WRITABLE_BOOK);
         plugin.getServer().addRecipe(recipe);
     }
 
     private void registerHealNoteRecipe() {
         NamespacedKey key = new NamespacedKey(plugin, "heal_note");
         ShapedRecipe recipe = new ShapedRecipe(key, plugin.getItemManager().createHealNote());
-         recipe.shape(
-            "NTN",
-            "TBT",
-            "NTN"
-    );
-
-    recipe.setIngredient('N', Material.PAPER);
-    recipe.setIngredient('T', Material.TOTEM_OF_UNDYING);
-    recipe.setIngredient('B', Material.WRITABLE_BOOK);
+        recipe.shape(
+            "TMT",
+            "MBM",
+            "TMT"
+        );
+        recipe.setIngredient('T', Material.TOTEM_OF_UNDYING);
+        recipe.setIngredient('M', Material.PAPER); // Sera remplacé par Page Maudite
+        recipe.setIngredient('B', Material.WRITABLE_BOOK);
         plugin.getServer().addRecipe(recipe);
     }
 
     private void registerDebanBookRecipe() {
         NamespacedKey key = new NamespacedKey(plugin, "deban_book");
         ShapedRecipe recipe = new ShapedRecipe(key, plugin.getItemManager().createDebanBook());
-       recipe.shape(
+        recipe.shape(
             "NSN",
-            "SBS",
+            "SBN",
             "NSN"
-    );
-
-    recipe.setIngredient('N', Material.NETHER_STAR);
-    recipe.setIngredient('S', Material.REINFORCED_DEEPSLATE);
-    recipe.setIngredient('B', Material.WRITABLE_BOOK);
+        );
+        recipe.setIngredient('N', Material.NETHER_STAR);
+        recipe.setIngredient('S', Material.PIGLIN_HEAD);
+        recipe.setIngredient('B', Material.WRITABLE_BOOK);
         plugin.getServer().addRecipe(recipe);
     }
 }

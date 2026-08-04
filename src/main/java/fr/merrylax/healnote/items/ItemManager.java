@@ -23,6 +23,20 @@ public class ItemManager {
         this.bookTypeKey = new NamespacedKey(plugin, "book_type");
     }
 
+    public ItemStack createMauditePages() {
+        ItemStack item = new ItemStack(Material.PAPER);
+        ItemMeta meta = item.getItemMeta();
+        if (meta != null) {
+            meta.setDisplayName("§6📜 Page Maudite");
+            meta.setLore(Arrays.asList(
+                "§7Ingrédient spécial pour les items magiques.",
+                "§c§lNécessaire pour crafter Death Note & Heal Note"
+            ));
+            item.setItemMeta(meta);
+        }
+        return item;
+    }
+
     public ItemStack createDeathNote() {
         ItemStack item = new ItemStack(Material.WRITABLE_BOOK);
         ItemMeta meta = item.getItemMeta();
