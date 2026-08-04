@@ -118,13 +118,13 @@ public class ItemManager {
     }
 
     public String getBookId(ItemStack item) {
-        if (item.getItemMeta() == null) return null;
+        if (item == null || item.getItemMeta() == null) return null;
         PersistentDataContainer container = item.getItemMeta().getPersistentDataContainer();
         return container.get(bookIdKey, PersistentDataType.STRING);
     }
 
     public String getBookType(ItemStack item) {
-        if (item.getItemMeta() == null) return null;
+        if (item == null || item.getItemMeta() == null) return null;
         PersistentDataContainer container = item.getItemMeta().getPersistentDataContainer();
         return container.get(bookTypeKey, PersistentDataType.STRING);
     }

@@ -3,6 +3,7 @@ package fr.merrylax.healnote.recipes;
 import fr.merrylax.healnote.HealNoteV2;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 
 public class RecipeManager {
@@ -43,7 +44,7 @@ public class RecipeManager {
             "TMT"
         );
         recipe.setIngredient('T', Material.TOTEM_OF_UNDYING);
-        recipe.setIngredient('M', Material.PAPER); // Sera remplacé par Page Maudite
+        recipe.setIngredient('M', Material.PAPER); // Page Maudite (affichage custom du PAPER)
         recipe.setIngredient('B', Material.WRITABLE_BOOK);
         plugin.getServer().addRecipe(recipe);
     }
@@ -57,7 +58,7 @@ public class RecipeManager {
             "TMT"
         );
         recipe.setIngredient('T', Material.TOTEM_OF_UNDYING);
-        recipe.setIngredient('M', Material.PAPER); // Sera remplacé par Page Maudite
+        recipe.setIngredient('M', Material.PAPER); // Page Maudite (affichage custom du PAPER)
         recipe.setIngredient('B', Material.WRITABLE_BOOK);
         plugin.getServer().addRecipe(recipe);
     }
